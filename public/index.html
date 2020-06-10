@@ -1,0 +1,101 @@
+
+<!--
+ login.html
+ kopo_ios
+
+ Created by Dayyoung on 02/01/2019.
+ Copyright © 2019 Dayyoung. All rights reserved.
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>테스</title>
+
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<style type="text/css">
+
+        .inputLabel {
+            //background-color: #4CAF50; /* Green */
+            //border: none;
+            //color: white;
+            //padding: 15px 32px;
+            //text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin : 5px;
+            width : 80%;
+        }
+
+    .button {
+        //background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin : 5px;
+        width : 80%;
+    }
+    .greenBack {background-color: #4CAF50;} /* Green */
+    .blueBack {background-color: #008CBA;} /* Blue */
+    .redBack {background-color: #f44336;} /* Red */
+        </style>
+
+<body>
+
+<center>
+
+    <h3>메인화면</h3>
+
+    <button class="button blueBack"><a href="./scheme.html">Scheme 테스트</a></button>
+
+    <button class="button blueBack"><a href="./appinfo.html">앱정보 테스트</a></button>
+
+    <button class="button blueBack"><a href="./auth.html">인증설정 테스트</a></button>
+
+    <button class="button blueBack"><a href="./bio.html">생체인증 테스트</a></button>
+
+    <button class="button blueBack"><a href="./session.html">세션 테스트</a></button>
+
+    <button class="button blueBack"><a href="./media.html">멀티미디어 테스트</a></button>
+
+    <button class="button blueBack"><a href="./doc.html">문서 테스트</a></button>
+
+    <br>
+    <br>
+    COPYRIGHT 2019 BY Squarenet. ALL RIGHTS RESERVED.
+    <br>
+    <br>
+</center>
+</body>
+<script type="text/javascript">
+
+
+            function setAutoLogin(autoLogin)
+            {
+                try {
+                    webkit.messageHandlers.callbackHandler.postMessage("setAutoLogin");
+                } catch(err) {
+                    window.Android.setAutoLogin(autoLogin);
+                }
+            }
+
+            function updateAutoLogin(setValue)
+            {
+             if(setValue == 1)
+             {
+             document.getElementById("autoLoginButton").innerHTML="자동로그인 : ON"
+         	 }else{
+             document.getElementById("autoLoginButton").innerHTML="자동로그인 : OFF"
+         	 }
+            }
+
+</script>
+
+</html>

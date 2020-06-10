@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>테스트</title>
+    <meta name="viewport"
+          content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+
+<body>
+
+<a href="./index.html"><h3>뒤로 가기</h3></a></br>
+<center>
+    <h3 style="padding:"10px;">인증 설정하기 테스트</h3>
+    <br>
+    현재 인증수단 : <p id=currentType>N/A</p>
+    <br>아이디인증(ID) 설정하기 : <br>
+    <button class="button greenBack" onClick="goUrl(this)">smartq://hycu?action=setAuth&type=ID&returnUrl=file:///android_asset/auth.html</button>
+    <br>생체인증(BO) 설정하기 : <br>
+    <button class="button blueBack" onClick="goUrl(this)">smartq://hycu?action=setAuth&type=BO&returnUrl=file:///android_asset/auth.html</button>
+    <br>공인인증(CT) 설정하기 : <br>
+    <button class="button redBack" onClick="goUrl(this)">smartq://hycu?action=setAuth&type=CT&returnUrl=file:///android_asset/auth.html</button>
+    <br>인증수단 삭제 : <br>
+    <button class="button greenBack" onClick="goUrl(this)">smartq://hycu?action=deleteAuth&returnUrl=file:///android_asset/auth.html</button>
+    <br>현재 인증수단 가져오기 : <br>
+    <button class="button blueBack" onClick="goUrl(this)">smartq://hycu?action=getAuth&returnUrl=file:///android_asset/auth.html</button>
+    <br>
+    <br>
+    <br>
+    COPYRIGHT 2020 BY Squarenet. ALL RIGHTS RESERVED.
+    <br>
+
+    <br>
+</center>
+
+<script type="text/javascript">
+
+// url 에서 parameter 추출
+function getParam(sname) {
+
+    var params = location.search.substr(location.search.indexOf("?") + 1);
+    var sval = "";
+    params = params.split("&");
+    for (var i = 0; i < params.length; i++) {
+        temp = params[i].split("=");
+        if ([temp[0]] == sname) { sval = temp[1]; }
+    }
+    return sval;
+}
+
+function refreshData(){
+    var url = window.location.href
+    var type = getParam("type")
+    if(type) {
+      var currentType = document.getElementById("currentType")
+      currentType.innerHTML = type
+    }else{
+      var currentType = document.getElementById("currentType")
+      currentType.innerHTML = "N/A"
+      }
+
+}
+
+function goUrl(button){
+    //alert(button.innerHTML)
+    var url = button.innerHTML.replace(/amp;/gi,"")
+    //alert(url)
+    window.location.href = url
+}
+</script>
+
+</body>
+
+<style type="text/css">
+
+    .inputLabel {
+        //background-color: #4CAF50; /* Green */
+        //border: none;
+        //color: white;
+        //padding: 15px 32px;
+        //text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin : 5px;
+        width : 80%;
+    }
+
+    .button {
+        //background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin : 5px;
+        width : 80%;
+    }
+
+    .button a {
+        color: white;
+    }
+    .greenBack {background-color: #4CAF50;} /* Green */
+    .blueBack {background-color: #008CBA;} /* Blue */
+    .redBack {background-color: #f44336;} /* Red */
+
+
+</style>
+</html>

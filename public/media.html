@@ -1,0 +1,259 @@
+<!--
+ login.html
+ kopo_ios
+
+ Created by Dayyoung on 02/01/2019.
+ Copyright © 2019 Dayyoung. All rights reserved.
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TEST</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+
+    <script type="text/javascript">
+            //alert("한국폴리텍대학");
+
+
+            function goLogin() {
+                try {
+                    webkit.messageHandlers.callbackHandler.postMessage("goLogin");
+                } catch(err) {
+                    //window.Android.toastShort( "JavscriptInterface Test" );
+                    window.Android.goLogin( "JavscriptInterface Test" );
+                }
+            }
+
+
+            function goMain() {
+                try {
+                    webkit.messageHandlers.callbackHandler.postMessage("goMain");
+                } catch(err) {
+                    window.Android.goMain( "JavscriptInterface Test" );
+                }
+            }
+
+            function callNative() {
+                try {
+                    webkit.messageHandlers.callbackHandler.postMessage("MessageBody");
+                } catch(err) {
+                    window.Android.goMain( "JavscriptInterface Test" );
+                }
+            }
+
+            function goBioAuth() {
+                try {
+                    webkit.messageHandlers.callbackHandler.postMessage("goBioAuth");
+                } catch(err) {
+                    window.Android.goBioAuth( "JavscriptInterface Test" );
+                }
+            }
+
+            function setBioAuth() {
+                try {
+                    webkit.messageHandlers.callbackHandler.postMessage("setBioAuth");
+                } catch(err) {
+                    window.Android.setBioAuth( "JavscriptInterface Test" );
+                }
+            }
+
+            function goBluetooth() {
+                try {
+                    webkit.messageHandlers.callbackHandler.postMessage("goBluetooth");
+                } catch(err) {
+                    window.Android.goBluetooth( "JavscriptInterface Test" );
+                }
+            }
+
+
+            function goAlarm() {
+                try {
+                    webkit.messageHandlers.callbackHandler.postMessage("goAlarm");
+                } catch(err) {
+                    window.Android.goAlarm( "JavscriptInterface Test" );
+                }
+            }
+
+            function showCookie() {
+                try {
+                    webkit.messageHandlers.callbackHandler.postMessage("showCookie");
+                } catch(err) {
+                    window.Android.showCookie( "JavscriptInterface Test" );
+                }
+            }
+            function setCookie() {
+                try {
+                    webkit.messageHandlers.callbackHandler.postMessage("setCookie");
+                } catch(err) {
+                    window.Android.setCookie( "JavscriptInterface Test" );
+                }
+            }
+
+            function goQR() {
+                try {
+                    webkit.messageHandlers.callbackHandler.postMessage("goQR");
+                } catch(err) {
+                    window.Android.goQR( "JavscriptInterface Test" );
+                }
+            }
+            function callbackFromBluetooth(UUID){
+                //something!
+            }
+
+            function redHeader() {
+                alert('redHeader() CALL');
+                document.querySelector('h1').style.color = "red";
+            }
+
+            function blueHeader() {
+                alert('blueHeader() CALL');
+                document.querySelector('h1').style.color = "blue";
+            }
+
+
+            // var autoLogin = 0
+
+            // updateAutoLogin(autoLogin);
+
+            // function setAutoLogin()
+            // {
+            //     try {
+            //         webkit.messageHandlers.callbackHandler.postMessage("setAutoLogin");
+            //     } catch(err) {
+            //         window.Android.setAutoLogin(autoLogin);
+            //     }
+            // }
+
+            // function updateAutoLogin(YN)
+            // {
+            //  alert(document.getElementById("autoLoginButton"));
+            //  //document.getElementById("autoLoginButton").innerText = YN;
+            //  document.getElementById("autoLoginButton").innerHTML="new File"
+            // }
+
+
+
+            </script>
+</head>
+
+<style type="text/css">
+
+        .inputLabel {
+            //background-color: #4CAF50; /* Green */
+            //border: none;
+            //color: white;
+            //padding: 15px 32px;
+            //text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin : 5px;
+            width : 80%;
+        }
+
+    .button {
+        //background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin : 5px;
+        width : 80%;
+    }
+    .greenBack {background-color: #4CAF50;} /* Green */
+    .blueBack {background-color: #008CBA;} /* Blue */
+    .redBack {background-color: #f44336;} /* Red */
+        </style>
+
+<body>
+<a href="./index.html"><h3>뒤로 가기</h3></a></br>
+<center>
+
+    <h3>멀티미디어 테스트</h3>
+
+    동영상 재생 : </br>
+
+    <video width="400" controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+        Your browser does not support HTML5 video.
+    </video>
+
+    동영상 링크 재생 :
+    <br>
+
+    <button class="button greenBack"><a href="https://www.w3schools.com/html/mov_bbb.mp4">재생하기</a></button>
+
+
+
+    <br>
+
+    <audio controls>
+        <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <br>
+
+    음악 링크 재생 :
+    <br>
+
+    <button class="button blueBack"><a href="https://www.w3schools.com/html/horse.mp3">재생하기</a></button>
+
+    <br>
+    <br>
+    <br>
+    사진가져오기 : <br>
+    <input type="file" accept="image/*">
+    <br>
+    사진&PDF가져오기 : <br>
+    <input type="file">
+    <br>
+    HWP&XLS가져오기 : <br>
+    <input type="file" accept=".hwp,.xls,.xlsx">
+    <br>
+    사진활영 : <br>
+    <input type="file" accept="image/*" capture="camera">
+
+    <br>
+    <br>
+    <br>
+    COPYRIGHT 2019 BY Squarenet. ALL RIGHTS RESERVED.
+    <br>
+    <br>
+</center>
+</body>
+<script type="text/javascript">
+
+
+            var autoLogin;
+
+            updateAutoLogin(autoLogin);
+
+            function setAutoLogin()
+            {
+                try {
+                    webkit.messageHandlers.callbackHandler.postMessage("setAutoLogin");
+                } catch(err) {
+                    window.Android.setAutoLogin(autoLogin);
+                }
+            }
+
+            function updateAutoLogin(YN)
+            {
+             if(autoLogin == 1)
+             {
+             document.getElementById("autoLoginButton").innerHTML="자동로그인 : ON"
+         	 }else{
+             document.getElementById("autoLoginButton").innerHTML="자동로그인 : OFF"
+         	 }
+            }
+
+</script>
+
+</html>
