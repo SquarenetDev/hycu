@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>
 
-<body>
+<body onload=onLoad()>
 
 <a href="./index.html"><h3>뒤로 가기</h3></a></br>
 <center>
@@ -21,7 +21,7 @@
     </div>
     <br>
 
-    <textarea id="testTextArea" name="w3review" rows="10" cols="50" style="width:90%">
+    <textarea id="resultTextArea" name="w3review" rows="10" cols="50" style="width:90%">
     </textarea>
 
     <button class="button blueBack" onClick="addUser()">AAA 사용자 로그인</button>
@@ -43,6 +43,25 @@
 
 <script type="text/javascript">
 
+function goUrl(button){
+    var url = button.innerHTML.replace(/amp;/gi,"")
+    window.location.href = url
+}
+
+function onLoad()
+{
+    var getUserListScheme = "smartq://hycu?action=getUserList"
+
+    try {
+        webkit.messageHandlers.callbackHandler.postMessage(getUserListScheme);
+    } catch(err) {
+    }
+
+    try {
+        window.Android.goScheme(getUserListScheme);
+    } catch(err) {
+    }
+}
 
 function setUserId(userId) {
       var userIdText = document.getElementById("userId")
@@ -54,15 +73,30 @@ function setPassword(password) {
        passwordText.innerHTML = password
 }
 
-function showLog(log){
+//Override
+function smartQAppCallback(data){
+    
+   //alert(data)
+   
+   var response = JSON.parse(data)
+   if(response && response.action && response.json){
+    if(response.action == "getUserList"){
 
-    //alert(log)
+        if(response.json.currentSmartQUser){
+            setUserId(response.json.currentSmartQUser.userId);
+            setPassword(response.json.currentSmartQUser.password);
+        }else{
+            setUserId("N/A");
+            setPassword("N/A");
+        }
 
- var testTextArea = document.getElementById("testTextArea")
+        var resultTextArea = document.getElementById("resultTextArea")
+        var jsonString = JSON.stringify(response);
+        resultTextArea.value = jsonString
+    }
+  }
+}
 
-    testTextArea.value = log
-
- }
 
 function addUser() {
     try {

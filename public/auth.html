@@ -7,23 +7,30 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>
 
-<body>
+<body onload=onLoad()>
 
 <a href="./index.html"><h3>뒤로 가기</h3></a></br>
 <center>
-    <h3 style="padding:"10px;">인증 설정하기 테스트</h3>
+    <h3 style="padding:10px;">인증설정 테스트</h3>
+
     <br>
+    <div style="margin:5px;">
+    현재 사용자 : <p id=userId>N/A</p>
+    현재 비밀번호 : <p id=password>N/A</p>
     현재 인증수단 : <p id=currentType>N/A</p>
+    </div>
+    <br>
+
     <br>아이디인증(ID) 설정하기 : <br>
-    <button class="button greenBack" onClick="goUrl(this)">smartq://hycu?action=setAuth&type=ID&returnUrl=file:///android_asset/auth.html</button>
+    <button class="button greenBack" onClick="goUrl(this)">smartq://hycu?action=setAuth&type=ID</button>
     <br>생체인증(BO) 설정하기 : <br>
-    <button class="button blueBack" onClick="goUrl(this)">smartq://hycu?action=setAuth&type=BO&returnUrl=file:///android_asset/auth.html</button>
+    <button class="button blueBack" onClick="goUrl(this)">smartq://hycu?action=setAuth&type=BO</button>
     <br>공인인증(CT) 설정하기 : <br>
-    <button class="button redBack" onClick="goUrl(this)">smartq://hycu?action=setAuth&type=CT&returnUrl=file:///android_asset/auth.html</button>
+    <button class="button redBack" onClick="goUrl(this)">smartq://hycu?action=setAuth&type=CT</button>
     <br>인증수단 삭제 : <br>
-    <button class="button greenBack" onClick="goUrl(this)">smartq://hycu?action=deleteAuth&returnUrl=file:///android_asset/auth.html</button>
+    <button class="button greenBack" onClick="goUrl(this)">smartq://hycu?action=deleteAuth</button>
     <br>현재 인증수단 가져오기 : <br>
-    <button class="button blueBack" onClick="goUrl(this)">smartq://hycu?action=getAuth&returnUrl=file:///android_asset/auth.html</button>
+    <button class="button blueBack" onClick="goUrl(this)">smartq://hycu?action=getAuth&returnUrl=https://hycu-b61a9.web.app/result.html</button>
     <br>
     <br>
     <br>
@@ -35,29 +42,80 @@
 
 <script type="text/javascript">
 
-// url 에서 parameter 추출
-function getParam(sname) {
 
-    var params = location.search.substr(location.search.indexOf("?") + 1);
-    var sval = "";
-    params = params.split("&");
-    for (var i = 0; i < params.length; i++) {
-        temp = params[i].split("=");
-        if ([temp[0]] == sname) { sval = temp[1]; }
-    }
-    return sval;
+function setUserId(userId) {
+      var userIdText = document.getElementById("userId")
+      userIdText.innerHTML = userId
 }
 
-function refreshData(){
-    var url = window.location.href
-    var type = getParam("type")
-    if(type) {
-      var currentType = document.getElementById("currentType")
-      currentType.innerHTML = type
-    }else{
-      var currentType = document.getElementById("currentType")
-      currentType.innerHTML = "N/A"
-      }
+function setPassword(password) {
+       var passwordText = document.getElementById("password")
+       passwordText.innerHTML = password
+}
+
+//Override
+function smartQAppCallback(data){
+    
+   var response = JSON.parse(data)
+
+    if(response.action == "getUserList"){
+
+        if(response.json.currentSmartQUser){
+            setUserId(response.json.currentSmartQUser.userId);
+            setPassword(response.json.currentSmartQUser.password);
+        }else{
+            setUserId("N/A");
+            setPassword("N/A");
+        }
+    }
+    if(response.action == "getAuth"){
+        if(response.isSuccess == "Y"){
+            var currentType = document.getElementById("currentType")
+            currentType.innerHTML = response.type
+            
+            //alert(response.errorCode +"\n"+ response.errorMessage+"\n인증종류 : "+ currentType)
+        }else{
+            var currentType = document.getElementById("currentType")
+            currentType.innerHTML = "N/A"
+            
+            alert(response.errorCode +"\n"+ response.errorMessage)
+        }
+    }
+    if(response.action == "setAuth"){
+        
+        if(response.isSuccess == "Y"){
+            var currentType = document.getElementById("currentType")
+            currentType.innerHTML = response.type
+        }else{
+            alert(response.errorCode +"\n"+ response.errorMessage)
+        }
+    }
+    if(response.action == "deleteAuth"){
+        if(response.isSuccess == "Y"){
+            var currentType = document.getElementById("currentType")
+            currentType.innerHTML = "N/A"
+        }else{
+            alert(response.errorCode +"\n"+ response.errorMessage)
+        }
+    }
+}
+
+function onLoad(){
+    
+    var getAuthScheme = "smartq://hycu?action=getAuth"
+    var getUserListScheme = "smartq://hycu?action=getUserList"
+    
+    try {
+        webkit.messageHandlers.callbackHandler.postMessage(getAuthScheme);
+        webkit.messageHandlers.callbackHandler.postMessage(getUserListScheme);
+    } catch(err) {
+    }
+    
+    try {
+        window.Android.goScheme(getUserListScheme);
+        window.Android.goScheme(getAuthScheme);
+    } catch(err) {
+    }
 
 }
 

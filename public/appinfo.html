@@ -11,16 +11,16 @@
 
 <a href="./index.html"><h3>뒤로 가기</h3></a></br>
 <center>
-    <h3>설정 테스트</h3>
+    <h3>앱 정보 테스트</h3>
     <br>
     결과값 :<br>
     <textarea id="resultTextArea" name="w3review" rows="10" cols="50" style="width:90%">
     </textarea>
     <br>앱 버전 가져오기 : <br>
-    <button class="button greenBack" onClick="goUrl(this)">smartq://hycu?action=getVersion&returnUrl=file:///android_asset/appinfo.html</button>
+    <button class="button greenBack" onClick="goUrl(this)">smartq://hycu?action=getVersion</button>
     <br>
     <br>앱 모든정보 가져오기 : <br>
-    <button class="button blueBack" onClick="goUrl(this)">smartq://hycu?action=getAppInfo&returnUrl=file:///android_asset/appinfo.html</button>
+    <button class="button blueBack" onClick="goUrl(this)">smartq://hycu?action=getAppInfo&returnUrl=https://hycu-b61a9.web.app/result.html</button>
     <br>
     <br>
     COPYRIGHT 2020 BY Squarenet. ALL RIGHTS RESERVED.
@@ -44,37 +44,26 @@ function getParam(sname) {
     return sval;
 }
 
-function onLoad(){
-    var version = getParam("version")
-    if(version) {
-      var resultTextArea = document.getElementById("resultTextArea")
-      resultTextArea.innerHTML = version
-    }
-
-    var json = getParam("json")
-    if(json) {
-      var resultTextArea = document.getElementById("resultTextArea")
-      var dec = decodeURI(json);
-      resultTextArea.innerHTML = dec
-    }
-
+function onLoad()
+{
+    window.location.href = "smartq://hycu?action=getVersion&test=true"
 }
 
-function refreshData(){
-    var version = getParam("version")
-    if(version) {
-      var resultTextArea = document.getElementById("resultTextArea")
-      resultTextArea.innerHTML = version
+//Override
+function smartQAppCallback(data){
+   var response = JSON.parse(data)
+   if(response && response.action && response.json){
+    if(response.action == "getVersion"){
+        var testTextArea = document.getElementById("resultTextArea")
+        var jsonString = JSON.stringify(response);
+        testTextArea.value = jsonString
     }
-
-    var json = getParam("json")
-    if(json) {
-      var resultTextArea = document.getElementById("resultTextArea")
-      //var dec = decodeURI(json);
-      var dec = decodeURIComponent(json);
-      resultTextArea.innerHTML = dec
+    if(response.action == "getAppInfo"){
+        var testTextArea = document.getElementById("resultTextArea")
+        var jsonString = JSON.stringify(response);
+        testTextArea.value = jsonString
     }
-
+  }
 }
 
 function goUrl(button){

@@ -7,14 +7,28 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>
 
-<body>
+<body onload=onLoad()>
 
 <a href="./index.html"><h3>뒤로 가기</h3></a></br>
 <center>
-    <h3 style="padding:"10px;">인증 설정하기 테스트</h3>
+    <h3>생체인증 테스트</h3>
+
     <br>
-    준비중..
+    <div style="margin:5px;">
+    현재 사용자 : <p id=userId>N/A</p>
+    현재 비밀번호 : <p id=password>N/A</p>
+    현재 인증수단 : <p id=currentType>N/A</p>
+    </div>
     <br>
+
+    <br>생체인증 등록 : <br>
+    <button class="button greenBack" onClick="goUrl(this)">smartq://hycu?action=registBiometric</button>
+    <br>
+    <br>생체인증 해지 : <br>
+    <button class="button redBack" onClick="goUrl(this)">smartq://hycu?action=deregistBiometric</button>
+    <br>
+    <br>생체인증 : <br>
+    <button class="button blueBack" onClick="goUrl(this)">smartq://hycu?action=goBiometric&returnUrl=https://hycu-b61a9.web.app/result.html</button>
     <br>
     <br>
     COPYRIGHT 2020 BY Squarenet. ALL RIGHTS RESERVED.
@@ -25,29 +39,65 @@
 
 <script type="text/javascript">
 
-// url 에서 parameter 추출
-function getParam(sname) {
 
-    var params = location.search.substr(location.search.indexOf("?") + 1);
-    var sval = "";
-    params = params.split("&");
-    for (var i = 0; i < params.length; i++) {
-        temp = params[i].split("=");
-        if ([temp[0]] == sname) { sval = temp[1]; }
-    }
-    return sval;
+function setUserId(userId) {
+      var userIdText = document.getElementById("userId")
+      userIdText.innerHTML = userId
 }
 
-function refreshData(){
-    var url = window.location.href
-    var type = getParam("type")
-    if(type) {
-      var currentType = document.getElementById("currentType")
-      currentType.innerHTML = type
+function setPassword(password) {
+       var passwordText = document.getElementById("password")
+       passwordText.innerHTML = password
+}
+
+//Override
+function smartQAppCallback(data){
+
+   var response = JSON.parse(data)
+
+    if(response.action == "getUserList"){
+
+        if(response.json.currentSmartQUser){
+            setUserId(response.json.currentSmartQUser.userId);
+            setPassword(response.json.currentSmartQUser.password);
+        }else{
+            setUserId("N/A");
+            setPassword("N/A");
+        }
+    }
+    else if(response.action == "getAuth"){
+
+        if(response.isSuccess == "Y"){
+            var currentType = document.getElementById("currentType")
+            currentType.innerHTML = response.type
+        }else{
+            var currentType = document.getElementById("currentType")
+            currentType.innerHTML = "N/A"
+
+            alert(response.errorCode +"\n"+ response.errorMessage)
+        }
     }else{
-      var currentType = document.getElementById("currentType")
-      currentType.innerHTML = "N/A"
-      }
+        alert(data)
+        onLoad()
+    }
+}
+
+function onLoad(){
+
+    var getAuthScheme = "smartq://hycu?action=getAuth"
+    var getUserListScheme = "smartq://hycu?action=getUserList"
+
+    try {
+        webkit.messageHandlers.callbackHandler.postMessage(getAuthScheme);
+        webkit.messageHandlers.callbackHandler.postMessage(getUserListScheme);
+    } catch(err) {
+    }
+
+    try {
+        window.Android.goScheme(getUserListScheme);
+        window.Android.goScheme(getAuthScheme);
+    } catch(err) {
+    }
 
 }
 
