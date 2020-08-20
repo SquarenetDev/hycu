@@ -177,21 +177,22 @@
 
     동영상 재생 : </br>
 
-    <video width="400" controls>
+    <video width="400" controls playsinline>
         <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
         <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
         Your browser does not support HTML5 video.
     </video>
 
+    <br>
+    
     동영상 링크 재생 :
     <br>
 
     <button class="button greenBack"><a href="https://www.w3schools.com/html/mov_bbb.mp4">재생하기</a></button>
 
-
-
     <br>
-
+    
+    음악 재생 : </br>
     <audio controls>
         <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
         <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
@@ -206,16 +207,22 @@
     <button class="button blueBack"><a href="https://www.w3schools.com/html/horse.mp3">재생하기</a></button>
 
     <br>
+    
+    유튜브 재생 : </br>
+
+    <iframe src="https://www.youtube.com/embed/NsXFeQZE0yo?playsinline=1&controls=0"></iframe>
+
+    
     <br>
     <br>
-    사진가져오기 : <br>
-    <input type="file" accept="image/*">
-    <br>
-    사진&PDF가져오기 : <br>
+    모든파일 가져오기 : <br>
     <input type="file">
     <br>
-    HWP&XLS가져오기 : <br>
-    <input type="file" accept=".hwp,.xls,.xlsx">
+    사진 가져오기 : <br>
+    <input type="file" accept="image/*">
+    <br>
+    문서 가져오기 : <br>
+    <input type="file" accept="application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
     <br>
     사진활영 : <br>
     <input type="file" accept="image/*" capture="camera">
@@ -249,9 +256,9 @@
              if(autoLogin == 1)
              {
              document.getElementById("autoLoginButton").innerHTML="자동로그인 : ON"
-         	 }else{
+             }else{
              document.getElementById("autoLoginButton").innerHTML="자동로그인 : OFF"
-         	 }
+             }
             }
 
 </script>

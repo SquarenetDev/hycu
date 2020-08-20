@@ -22,13 +22,16 @@
     <br>
 
     <br>생체인증 등록 : <br>
-    <button class="button greenBack" onClick="goUrl(this)">smartq://hycu?action=registBiometric</button>
+    <button class="button greenBack" onClick="goUrl(this)" id="registButton">smartq://hycu?action=registBiometric</button>
     <br>
     <br>생체인증 해지 : <br>
-    <button class="button redBack" onClick="goUrl(this)">smartq://hycu?action=deregistBiometric</button>
+    <button class="button redBack" onClick="goUrl(this)" id="deregistButton">smartq://hycu?action=deregistBiometric</button>
     <br>
     <br>생체인증 : <br>
-    <button class="button blueBack" onClick="goUrl(this)">smartq://hycu?action=goBiometric&returnUrl=https://hycu-b61a9.web.app/result.html</button>
+    <button class="button blueBack" onClick="goUrl(this)" id="authButton">smartq://hycu?action=goBiometric&returnUrl=https://hycu-b61a9.web.app/result.html</button>
+    <br>
+    <br>생체인증 확인: <br>
+    <button class="button blueBack" onClick="goUrl(this)" id="checkButton">smartq://hycu?action=checkBiometric</button>
     <br>
     <br>
     COPYRIGHT 2020 BY Squarenet. ALL RIGHTS RESERVED.
@@ -39,17 +42,6 @@
 
 <script type="text/javascript">
 
-
-function setUserId(userId) {
-      var userIdText = document.getElementById("userId")
-      userIdText.innerHTML = userId
-}
-
-function setPassword(password) {
-       var passwordText = document.getElementById("password")
-       passwordText.innerHTML = password
-}
-
 //Override
 function smartQAppCallback(data){
 
@@ -58,11 +50,43 @@ function smartQAppCallback(data){
     if(response.action == "getUserList"){
 
         if(response.json.currentSmartQUser){
-            setUserId(response.json.currentSmartQUser.userId);
-            setPassword(response.json.currentSmartQUser.password);
+
+            var userId = response.json.currentSmartQUser.userId
+            var password = response.json.currentSmartQUser.password
+
+            var userIdText = document.getElementById("userId")
+            userIdText.innerHTML = userId
+            var passwordText = document.getElementById("password")
+            passwordText.innerHTML = password
+
+            var registButton = document.getElementById("registButton")
+            if(registButton.innerHTML.indexOf(userId) == -1)
+                registButton.innerHTML = registButton.innerHTML +"&id="+ userId
+            var deregistButton = document.getElementById("deregistButton")
+            if(deregistButton.innerHTML.indexOf(userId) == -1)
+                deregistButton.innerHTML = deregistButton.innerHTML +"&id="+ userId
+            var authButton = document.getElementById("authButton")
+            if(authButton.innerHTML.indexOf(userId) == -1)
+                authButton.innerHTML = authButton.innerHTML +"&id="+ userId
+
+
+            var getAuthScheme = "smartq://hycu?action=getAuth&id=" + userId
+
+            try {
+                webkit.messageHandlers.callbackHandler.postMessage(getAuthScheme);
+            } catch(err) {
+            }
+
+            try {
+                window.Android.goScheme(getAuthScheme);
+            } catch(err) {
+            }
+
         }else{
-            setUserId("N/A");
-            setPassword("N/A");
+            var userIdText = document.getElementById("N/A")
+            userIdText.innerHTML = userId
+            var passwordText = document.getElementById("N/A")
+            passwordText.innerHTML = password
         }
     }
     else if(response.action == "getAuth"){
@@ -84,18 +108,18 @@ function smartQAppCallback(data){
 
 function onLoad(){
 
-    var getAuthScheme = "smartq://hycu?action=getAuth"
+    //var getAuthScheme = "smartq://hycu?action=getAuth"
     var getUserListScheme = "smartq://hycu?action=getUserList"
 
     try {
-        webkit.messageHandlers.callbackHandler.postMessage(getAuthScheme);
+        //webkit.messageHandlers.callbackHandler.postMessage(getAuthScheme);
         webkit.messageHandlers.callbackHandler.postMessage(getUserListScheme);
     } catch(err) {
     }
 
     try {
         window.Android.goScheme(getUserListScheme);
-        window.Android.goScheme(getAuthScheme);
+        //window.Android.goScheme(getAuthScheme);
     } catch(err) {
     }
 

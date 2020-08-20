@@ -22,15 +22,15 @@
     <br>
 
     <br>아이디인증(ID) 설정하기 : <br>
-    <button class="button greenBack" onClick="goUrl(this)">smartq://hycu?action=setAuth&type=ID</button>
+    <button class="button greenBack" onClick="goUrl(this)">smartq://hycu?action=setAuth&type=ID&id=AAA</button>
     <br>생체인증(BO) 설정하기 : <br>
-    <button class="button blueBack" onClick="goUrl(this)">smartq://hycu?action=setAuth&type=BO</button>
+    <button class="button blueBack" onClick="goUrl(this)">smartq://hycu?action=setAuth&type=BO&id=AAA</button>
     <br>공인인증(CT) 설정하기 : <br>
-    <button class="button redBack" onClick="goUrl(this)">smartq://hycu?action=setAuth&type=CT</button>
+    <button class="button redBack" onClick="goUrl(this)">smartq://hycu?action=setAuth&type=CT&id=AAA</button>
     <br>인증수단 삭제 : <br>
-    <button class="button greenBack" onClick="goUrl(this)">smartq://hycu?action=deleteAuth</button>
+    <button class="button greenBack" onClick="goUrl(this)">smartq://hycu?action=deleteAuth&id=AAA</button>
     <br>현재 인증수단 가져오기 : <br>
-    <button class="button blueBack" onClick="goUrl(this)">smartq://hycu?action=getAuth&returnUrl=https://hycu-b61a9.web.app/result.html</button>
+    <button class="button blueBack" onClick="goUrl(this)">smartq://hycu?action=getAuth&id=AAA&returnUrl=https://hycu-b61a9.web.app/result.html</button>
     <br>
     <br>
     <br>
@@ -102,7 +102,7 @@ function smartQAppCallback(data){
 
 function onLoad(){
     
-    var getAuthScheme = "smartq://hycu?action=getAuth"
+    var getAuthScheme = "smartq://hycu?action=getAuth&id=AAA"
     var getUserListScheme = "smartq://hycu?action=getUserList"
     
     try {
