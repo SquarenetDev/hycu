@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Lib_Magic_FIDO" external.linked.project.path="$MODULE_DIR$/../../../Lib_Magic_FIDO" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="android-gradle" name="Android-Gradle">
+      <configuration>
+        <option name="GRADLE_PROJECT_PATH" value=":Lib_Magic_FIDO" />
+      </configuration>
+    </facet>
+    <facet type="android" name="Android">
+      <configuration>
+        <option name="SELECTED_BUILD_VARIANT" value="debug" />
+        <option name="ASSEMBLE_TASK_NAME" value="assembleDebug" />
+        <option name="COMPILE_JAVA_TASK_NAME" value="compileDebugSources" />
+        <afterSyncTasks>
+          <task>generateDebugSources</task>
+        </afterSyncTasks>
+        <option name="ALLOW_USER_CONFIGURATION" value="false" />
+        <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
+        <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
+        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/main/res;file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/generated/res/rs/debug;file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/generated/res/resValues/debug" />
+        <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="" />
+        <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
+        <option name="PROJECT_TYPE" value="1" />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
+    <output url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/intermediates/classes/debug" />
+    <output-test url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/intermediates/classes/test/debug" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO">
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/generated/source/apt/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/generated/source/aidl/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/generated/source/rs/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/generated/res/rs/debug" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/generated/res/resValues/debug" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/generated/source/apt/androidTest/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/generated/source/aidl/androidTest/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/generated/source/buildConfig/androidTest/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/generated/source/rs/androidTest/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/generated/res/rs/androidTest/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/generated/res/resValues/androidTest/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/generated/source/apt/test/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/debug/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/debug/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/debug/assets" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/debug/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/debug/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/debug/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/debug/shaders" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/androidTestDebug/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/androidTestDebug/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/androidTestDebug/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/androidTestDebug/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/androidTestDebug/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/androidTestDebug/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/androidTestDebug/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/testDebug/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/testDebug/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/testDebug/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/testDebug/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/testDebug/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/testDebug/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/testDebug/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/main/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/main/assets" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/main/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/main/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/main/shaders" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/androidTest/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/androidTest/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/androidTest/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/androidTest/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/androidTest/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/androidTest/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/androidTest/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/test/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/test/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/test/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/test/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/test/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/src/test/shaders" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/generated/not_namespaced_r_class_sources" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/generated/source/r" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/intermediates/attr" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/intermediates/check-manifest" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/intermediates/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/intermediates/incremental" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/intermediates/intermediate-jars" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/intermediates/javaPrecompile" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/intermediates/jniLibs" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/intermediates/manifests" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/intermediates/packaged-aidl" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/intermediates/packagedAssets" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/intermediates/packaged_res" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/intermediates/public_res" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/intermediates/res" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/intermediates/rs" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/intermediates/shaders" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/intermediates/symbols" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/intermediates/transforms" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/outputs" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Lib_Magic_FIDO/build/tmp" />
+    </content>
+    <orderEntry type="jdk" jdkName="Android API 29 Platform" jdkType="Android SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/choo/Documents/Project/002_FIDO/MagicFIDO/Release/MagicFIDO/201218_MagicFIDO_Android_SDK/MagicFIDO_Android_SDK_v1_12_1/Sample/DREAM_RPClient_Sample/Lib_Magic_FIDO/libs/lib_Magic_FIDO_Client_v1.0.29.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.2.4@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/choo/Documents/Project/002_FIDO/MagicFIDO/Release/MagicFIDO/201218_MagicFIDO_Android_SDK/MagicFIDO_Android_SDK_v1_12_1/Sample/DREAM_RPClient_Sample/Lib_Magic_FIDO/libs/Auth_lib_Magic_PasscodeAuth_v1.0.33.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/choo/Documents/Project/002_FIDO/MagicFIDO/Release/MagicFIDO/201218_MagicFIDO_Android_SDK/MagicFIDO_Android_SDK_v1_12_1/Sample/DREAM_RPClient_Sample/Lib_Magic_FIDO/libs/org.apache.http.legacy.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/choo/Documents/Project/002_FIDO/MagicFIDO/Release/MagicFIDO/201218_MagicFIDO_Android_SDK/MagicFIDO_Android_SDK_v1_12_1/Sample/DREAM_RPClient_Sample/Lib_Magic_FIDO/libs/lib_Magic_UAFProtocol_v1.0.16.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/choo/Documents/Project/002_FIDO/MagicFIDO/Release/MagicFIDO/201218_MagicFIDO_Android_SDK/MagicFIDO_Android_SDK_v1_12_1/Sample/DREAM_RPClient_Sample/Lib_Magic_FIDO/libs/Auth_lib_Magic_FingerAuth_v1.0.26.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/choo/Documents/Project/002_FIDO/MagicFIDO/Release/MagicFIDO/201218_MagicFIDO_Android_SDK/MagicFIDO_Android_SDK_v1_12_1/Sample/DREAM_RPClient_Sample/Lib_Magic_FIDO/libs/Auth_lib_Magic_Pattern_v1.0.22.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/choo/Documents/Project/002_FIDO/MagicFIDO/Release/MagicFIDO/201218_MagicFIDO_Android_SDK/MagicFIDO_Android_SDK_v1_12_1/Sample/DREAM_RPClient_Sample/Lib_Magic_FIDO/libs/lib_Magic_RPSDK_v1.0.43.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/choo/Documents/Project/002_FIDO/MagicFIDO/Release/MagicFIDO/201218_MagicFIDO_Android_SDK/MagicFIDO_Android_SDK_v1_12_1/Sample/DREAM_RPClient_Sample/Lib_Magic_FIDO/libs/lib_Magic_Authenticator_v1.0.32.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/choo/Documents/Project/002_FIDO/MagicFIDO/Release/MagicFIDO/201218_MagicFIDO_Android_SDK/MagicFIDO_Android_SDK_v1_12_1/Sample/DREAM_RPClient_Sample/Lib_Magic_FIDO/libs/Auth_lib_Magic_AuthWrapper_v1.0.30.jar:unspecified@jar" level="project" />
+  </component>
+</module>

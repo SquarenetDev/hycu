@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/passcode_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        >
+
+        <Button
+            android:id="@+id/btn_auv_cancel"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/mf_title_button_margin"
+            android:onClick="onClickCancel"
+            android:background="@drawable/btn_back_selector"></Button>
+
+        <Button
+            android:id="@+id/btn_auv_confirm"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/mf_title_button_margin"
+            android:onClick="onClickConfirm"
+            android:background="@drawable/btn_confirm_selector" />
+
+    </RelativeLayout>
+</LinearLayout>

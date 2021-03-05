@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/DREAM_RPClient_Sample.iml" filepath="$PROJECT_DIR$/.idea/DREAM_RPClient_Sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Lib_Magic_FIDO/DREAM_RPClient_Sample.Lib_Magic_FIDO.iml" filepath="$PROJECT_DIR$/.idea/modules/Lib_Magic_FIDO/DREAM_RPClient_Sample.Lib_Magic_FIDO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DREAM_RPClient_Sample.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DREAM_RPClient_Sample.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/magicvkeypad/DREAM_RPClient_Sample.magicvkeypad.iml" filepath="$PROJECT_DIR$/.idea/modules/magicvkeypad/DREAM_RPClient_Sample.magicvkeypad.iml" />
+    </modules>
+  </component>
+</project>

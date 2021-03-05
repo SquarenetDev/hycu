@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/LocalVerif_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
+
+        <include
+            android:id="@+id/title_box"
+            layout="@layout/auth_title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true" />
+
+        <ScrollView
+            android:id="@+id/userVerifyInfoScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/title_box">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="20dp"
+                    android:text="인증서 비밀번호 입력"
+                    android:textColor="#333333"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+
+                <include
+                    android:id="@+id/cert_box"
+                    layout="@layout/auth_cert_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginRight="35dp" />
+
+
+                <LinearLayout
+                    android:id="@+id/editLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+
+                    <RelativeLayout
+                        android:id="@+id/edit_take_box"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginRight="35dp">
+
+                        <EditText
+                            android:id="@+id/etxt_auv_passcode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/imAuthIcon"
+                            android:background="@drawable/pass_text_field"
+                            android:hint="비밀번호를 입력하세요."
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:textColor="@android:color/black"
+                            android:textSize="20dp" />
+
+                        <ImageView
+                            android:id="@+id/imAuthIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="10dp"
+                            android:src="@drawable/auth_btn_search_nor"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <include
+            android:id="@+id/vk_keypad"
+            layout="@layout/vk_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

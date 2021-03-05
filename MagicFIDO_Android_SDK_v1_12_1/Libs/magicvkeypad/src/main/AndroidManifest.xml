@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dreamsecurity.magicvkeypadlib" >
+
+    <application>
+
+        <activity android:name="com.dreamsecurity.magicvkeypad.DSNumActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name="com.dreamsecurity.magicvkeypad.DSCharActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+
+    </application>
+
+</manifest>

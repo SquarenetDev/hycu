@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "27.0.3"
+
+    defaultConfig {
+        applicationId "com.dream.magic.fido.rpclient"
+        minSdkVersion 18
+        targetSdkVersion 29
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+        }
+
+
+    }
+}
+
+dependencies {
+    api project(':Lib_Magic_FIDO')
+    implementation project(':magicvkeypad')
+}

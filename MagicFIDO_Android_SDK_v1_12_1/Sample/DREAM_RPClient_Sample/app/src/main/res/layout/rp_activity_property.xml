@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/back_page">
+
+    <TextView
+        android:id="@+id/versionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:textColor="@android:color/black"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:text="RP ServerURL"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/black" />
+
+    <EditText
+        android:id="@+id/edtprop"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:background="@drawable/input_bt"
+        android:ems="10"
+        android:textColor="@android:color/black">
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/edtprop1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtprop"
+        android:background="@drawable/input_bt"
+        android:ems="10"
+        android:textColor="@android:color/black">
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/edtprop2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtprop1"
+        android:background="@drawable/input_bt"
+        android:ems="10"
+        android:textColor="@android:color/black">
+
+        <requestFocus />
+    </EditText>
+
+
+    <LinearLayout
+        android:id="@+id/checkSSLLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtprop2"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <CheckBox
+            android:id="@+id/SSL_Check_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_bt"
+            android:checked="true"
+            android:text="SSLCert Check Mode"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/changedo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkSSLLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bt"
+        android:gravity="center_horizontal"
+        android:text="Save"
+        android:textColor="@android:color/black" />
+
+    <LinearLayout
+        android:id="@+id/reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/changedo"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+
+        <Button
+            android:id="@+id/patternReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt"
+            android:text="Pattern Reset"
+            android:textColor="@android:color/black"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/passcodeReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt"
+            android:text="Passcode Reset"
+            android:textColor="@android:color/black"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/change"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reset"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/patternChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt"
+            android:text="Pattern Change"
+            android:textColor="@android:color/black"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/passcodeChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bt"
+            android:text="Passcode Change"
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_facetId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/change"
+        android:layout_alignLeft="@+id/edtprop"
+        android:layout_marginTop="24dp"
+        android:text="FacetID for RP Client"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/black"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/textfacet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_facetId"
+        android:layout_alignLeft="@+id/edtprop"
+        android:layout_marginTop="24dp"
+        android:text="TextView"
+        android:textColor="@android:color/black"
+        android:visibility="gone" />
+
+</RelativeLayout>

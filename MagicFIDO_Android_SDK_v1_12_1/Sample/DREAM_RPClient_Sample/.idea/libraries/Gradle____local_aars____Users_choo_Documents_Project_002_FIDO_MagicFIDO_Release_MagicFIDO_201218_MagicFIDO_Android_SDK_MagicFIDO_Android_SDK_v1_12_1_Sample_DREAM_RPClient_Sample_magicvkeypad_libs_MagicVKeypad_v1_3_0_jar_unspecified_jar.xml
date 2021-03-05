@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:/Users/choo/Documents/Project/002_FIDO/MagicFIDO/Release/MagicFIDO/201218_MagicFIDO_Android_SDK/MagicFIDO_Android_SDK_v1_12_1/Sample/DREAM_RPClient_Sample/magicvkeypad/libs/MagicVKeypad_v1.3.0.jar:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/magicvkeypad/libs/MagicVKeypad_v1.3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
