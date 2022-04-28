@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>테스트</title>
+    <meta name="viewport"
+          content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+
+<body onload=onLoad()>
+
+<a href="./index.html"><h3>뒤로 가기</h3></a></br>
+<center>
+    <h3>결과 테스트</h3>
+    <br>
+    결과값 :<br>
+    <textarea id="resultTextArea" name="w3review" rows="10" cols="50" style="width:80%">
+    </textarea>
+    <br>
+    <button class="button greenBack" onClick="javascript:history.back()">돌아가기</button>
+    <br>
+    <br>
+    COPYRIGHT 2020 BY Squarenet. ALL RIGHTS RESERVED.
+    <br>
+
+    <br>
+</center>
+
+<script type="text/javascript">
+
+// url 에서 parameter 추출
+function getParam(sname) {
+
+    var params = location.search.substr(location.search.indexOf("?") + 1);
+    var sval = "";
+    params = params.split("&");
+    for (var i = 0; i < params.length; i++) {
+        temp = params[i].split("=");
+        if ([temp[0]] == sname) { sval = temp[1]; }
+    }
+    return sval;
+}
+
+function onLoad(){
+    var smartQData = getParam("smartQData")
+    if(smartQData) {
+      var resultTextArea = document.getElementById("resultTextArea")
+      var dec = decodeURIComponent(smartQData);
+      resultTextArea.innerHTML = dec
+    }
+}
+
+function goUrl(button){
+    //alert(button.innerHTML)
+    var url = button.innerHTML.replace(/amp;/gi,"")
+    //alert(url)
+    window.location.href = url
+}
+</script>
+
+</body>
+
+<style type="text/css">
+
+    .inputLabel {
+        //background-color: #4CAF50; /* Green */
+        //border: none;
+        //color: white;
+        //padding: 15px 32px;
+        //text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin : 5px;
+        width : 80%;
+    }
+
+    .button {
+        //background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin : 5px;
+        width : 80%;
+    }
+
+    .button a {
+        color: white;
+    }
+    .greenBack {background-color: #4CAF50;} /* Green */
+    .blueBack {background-color: #008CBA;} /* Blue */
+    .redBack {background-color: #f44336;} /* Red */
+
+
+</style>
+</html>

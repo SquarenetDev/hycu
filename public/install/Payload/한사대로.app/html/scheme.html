@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--    <meta name="viewport" content="width=device-width, user-scalable=no">-->
+    <meta name="viewport"
+          content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+
+<a href="./index.html"><h3>뒤로 가기</h3></a></br>
+<div style="width:100%">
+
+    <script>
+        function getLocation() {
+
+          if (navigator.geolocation) { // GPS를 지원하면
+            navigator.geolocation.getCurrentPosition(function(position) {
+              alert(position.coords.latitude + ' ' + position.coords.longitude);
+            }, function(error) {
+              console.error(error);
+            }, {
+              enableHighAccuracy: false,
+              maximumAge: 0,
+              timeout: Infinity
+            });
+          } else {
+            alert('GPS를 지원하지 않습니다');
+          }
+        }
+
+
+function goUrl(button){
+    //alert(button.innerHTL)
+    var url = button.innerHTML.replace(/amp;/gi,"")
+    //alert(url)
+    window.location.href = url
+}
+
+//Override
+function smartQAppCallback(data){
+   alert(data)
+}
+
+    </script>
+
+    <h2>스키마 테스트</h2>
+    <p>Android 앱설치여부  :</p>
+    <p><a onClick="goUrl(this)" href="#">smartq://hycu?action=checkApp&id=com.instructure.candroid.xinics.production</a></p>
+    <p>Android 앱실행  :</p>
+<!--    <p><a onClick="goUrl(this)" href="#">smartq://hycu?action=runapp&pakagename=com.kakao.talk&url=https://play.google.com/store/apps/details?id=com.kakao.talk&hl=ko</a></p>-->
+    <p><a onClick="goUrl(this)" href="#">smartq://hycu?action=runApp&id=com.kakao.talk&fallbackUrl=https://play.google.com/store/apps/details?id=com.kakao.talk&hl=ko</a></p>
+    <p>Android LMS 앱실행  :</p>
+    <p><a onClick="goUrl(this)" href="#">intent://lms.hycu.ac.kr#Intent;scheme=canvas-teacher;package=com.instructure.candroid.xinics.production;S.auth=eyJhbGciOiJSUzI10Q19QIPIiiVzwhkQTp0;end</a></p>
+
+    <p>iOS 앱설치여부  :</p>
+    <p><a onClick="goUrl(this)" href="#">smartq://hycu?action=checkApp&id=canvas-teacher://</a></p>
+    <p>iOS 앱실행  :</p>
+    <!--    <p><a onClick="goUrl(this)" href="#">smartq://hycu?action=runapp&pakagename=kakaotalk2://&url=https://apps.apple.com/kr/app/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1-kakaotalk/id362057947</a></p>-->
+    <p><a onClick="goUrl(this)" href="#">smartq://hycu?action=runApp&id=kakaotalk://&fallbackUrl=https://apps.apple.com/kr/app/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1-kakaotalk/id362057947</a></p>
+    <p>iOS LMS 앱실행  :</p>
+    
+    <p><a onClick="goUrl(this)" href="#">kakaotalk://</a></p>
+    
+    <p><a onClick="goUrl(this)" href="#">canvas-teacher://lms.hycu.ac.kr?auth=eyJhbGciOiJSUzI1</a></p>
+    
+    <p>SmartQ 스키마  :</p>
+    <p><a onClick="goUrl(this)" href="#">smartq://lms.hycu.ac.kr?auth=eyJhbGciOiJSUzI1</a></p>
+
+    <p>위치정보 가져오기 :</p>
+    <p><a href="javascript:getLocation()">navigator.geolocation.getCurrentPosition</a></p>
+    <p>인트로 이동 :</p>
+    <p><a onClick="goUrl(this)" href="#">smartq://hycu?action=goIntro</a></p>
+    <p>주소 이동 :</p>
+    <p><a onClick="goUrl(this)" href="#">smartq://hycu?action=goUrl&url=https://google.com</a></p>
+    <p>새창 열기 :</p>
+    <p><a href="https://google.com" target="_blank">https://google.com</a></p>
+    <p>외부 브라우저 호출 :</p>
+    <p><a onClick="goUrl(this)" href="#">smartq://hycu?action=goBrowser&url=https://google.com</a></p>
+    <p>내부 브라우저 호출 :</p>
+    <p><a onClick="goUrl(this)" href="#">smartq://hycu?action=goPopup&url=https://google.com&title=테스트제목</a></p>
+    <p>파일 다운로드 :</p>
+    <p><a onClick="goUrl(this)" href="#">smartq://hycu?action=download&url=http://ipv4.download.thinkbroadband.com/5MB.zip&fileName=5MB.zip</a></p>
+    <p>애플 스토어 이동 :</p>
+    <p><a onClick="goUrl(this)" href="#">itms-apps://itunes.apple.com/th/app/cafe-amazon-smart-pay/id1047593542?mt=8</a></p>
+    <p>애플 스토어 바로가기 :</p>
+    <p><a onClick="goUrl(this)" href="#">https://itunes.apple.com/kr/app/apple-store/id1075733649</a></p>
+    <p>플레이 스토어 이동 :</p>
+    <p><a onClick="goUrl(this)" href="#">https://play.google.com/store/apps/details?id=kr.co.squarenet.smartq.JN0000000005</a></p>
+    <p>플레이 스토어 바로가기 :</p>
+    <p><a onClick="goUrl(this)" href="#">market://details?id=com.squarenet.smartq.hycu&hl=ko</a></p>
+    <p>전화번호 링크 :</p>
+    <p><a onClick="goUrl(this)" href="#">tel:123456789</a>
+    <p>문자 링크 :</p>
+    <p><a onClick="goUrl(this)" href="#">sms:123456789</a>
+    <p>푸시 토큰 확인 :</p>
+    <p><a onClick="goUrl(this)" href="#">smartq://hycu?action=getToken&returnUrl=http://urlecho.appspot.com/echo</a></p>
+
+</div>
+
+</body>
+</html>

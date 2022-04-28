@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>테스트</title>
+    <meta name="viewport"
+          content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+
+<body onload=onLoad()>
+
+<a href="./index.html"><h3>뒤로 가기</h3></a></br>
+<center>
+    <h3>QR 테스트</h3>
+    <br>
+    <br>QR정보 가져오기 : <br>
+    <button class="button greenBack" onClick="goUrl(this)">smartq://hycu?action=goQR</button>
+    <br>
+    <br>QR정보 가져오기 (내부) : <br>
+    <button class="button greenBack" onClick="goUrl(this)">smartq://hycu?action=goQR&returnUrl=https://hycu-b61a9.web.app/result.html</button>
+    <br>
+    <br>QR정보 가져오기 (외부) : <br>
+    <button class="button greenBack" onClick="goUrl(this)">smartq://hycu?action=goQR&mode=IF&returnUrl=https://hycu-b61a9.web.app/result.html</button>
+    <br>
+    <br>
+    COPYRIGHT 2020 BY Squarenet. ALL RIGHTS RESERVED.
+    <br>
+
+    <br>
+</center>
+
+<script type="text/javascript">
+
+
+//Override
+function smartQAppCallback(data){
+   //alert(data)
+   var response = JSON.parse(data)
+   if(response.action == "goQR"){
+       if(response.data){
+           //alert(response.data)
+       }
+   }
+}
+
+function goUrl(button){
+    //alert(button.innerHTML)
+    var url = button.innerHTML.replace(/amp;/gi,"")
+    //alert(url)
+    window.location.href = url
+}
+</script>
+
+</body>
+
+<style type="text/css">
+
+    .inputLabel {
+        //background-color: #4CAF50; /* Green */
+        //border: none;
+        //color: white;
+        //padding: 15px 32px;
+        //text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin : 5px;
+        width : 80%;
+    }
+
+    .button {
+        //background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin : 5px;
+        width : 80%;
+    }
+
+    .button a {
+        color: white;
+    }
+    .greenBack {background-color: #4CAF50;} /* Green */
+    .blueBack {background-color: #008CBA;} /* Blue */
+    .redBack {background-color: #f44336;} /* Red */
+
+
+</style>
+</html>

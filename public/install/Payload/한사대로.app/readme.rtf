@@ -1,0 +1,265 @@
+{\rtf1\ansi\ansicpg949\cocoartf1671\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset129 AppleSDGothicNeo-Regular;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 Menlo-Bold;\f4\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red31\green31\blue36;\red255\green255\blue255;\red252\green95\blue163;
+\red145\green212\blue98;\red108\green121\blue134;\red83\green165\blue251;\red252\green106\blue93;\red122\green200\blue182;
+}
+{\*\expandedcolortbl;;\csgenericrgb\c12054\c12284\c14131;\csgenericrgb\c100000\c100000\c100000;\csgenericrgb\c98839\c37355\c63833;
+\csgenericrgb\c56799\c83212\c38450;\csgenericrgb\c42394\c47462\c52518;\csgenericrgb\c32509\c64749\c98390;\csgenericrgb\c98912\c41558\c36568;\csgenericrgb\c47716\c78607\c71403;
+}
+\paperw12240\paperh15840\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+	
+\f1 \'c6\'fa\'b8\'ae\'c5\'d8 \'be\'c6\'c0\'cc\'c6\'f9 \'c7\'c1\'b7\'ce\'c1\'a7\'c6\'ae\
+\
+	alamofire \'bb\'e7\'bf\'eb\'b9\'fd\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0 \cf0 \cb2 \
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\f2 \cf3             
+\f3\b \cf4 var
+\f2\b0 \cf3  requestUrl = \cf5 COMMONURL\cf3 .\cf5 mainUrl\cf3  + \cf5 COMMONURL\cf3 .\cf5 registApi
+\f0 \cf0 \
+
+\f2 \cf3             
+\f0 \cf0 \
+
+\f4\i \cf6 //            requestUrl = "
+\f2\i0 \cf7 https://kopo-d589b.firebaseapp.com/timestamp
+\f4\i \cf6 ";
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //
+\f0\i0 \cf0 \
+
+\f2 \cf3             requestUrl = \cf8 "http://192.168.0.25:5000/timestamp"\cf3 ;
+\f0 \cf0 \
+
+\f4\i \cf6 //
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //
+\f0\i0 \cf0 \
+
+\f2 \cf3             
+\f3\b \cf4 var
+\f2\b0 \cf3  jsondata: \cf9 Dictionary\cf3  = [\cf9 String\cf3 :\cf9 String\cf3 ]()
+\f0 \cf0 \
+
+\f2 \cf3             
+\f0 \cf0 \
+
+\f2 \cf3             
+\f3\b \cf4 let
+\f2\b0 \cf3  headers = [
+\f0 \cf0 \
+
+\f2 \cf3                 \cf8 "Content-Type"\cf3 : \cf8 "application/x-www-form-urlencoded"
+\f0 \cf0 \
+
+\f2 \cf3             ]
+\f0 \cf0 \
+
+\f2 \cf3             
+\f0 \cf0 \
+
+\f2 \cf3             jsondata[\cf8 "login_id"\cf3 ] = \cf8 ""
+\f0 \cf0 \
+
+\f2 \cf3             jsondata[\cf8 "login_password"\cf3 ] = \cf8 ""
+\f0 \cf0 \
+
+\f2 \cf3             jsondata[\cf8 "login_gubun"\cf3 ] = \cf8 "N"
+\f0 \cf0 \
+
+\f2 \cf3             jsondata[\cf8 "store_app_id"\cf3 ] = \cf8 "KOPO00000001"
+\f0 \cf0 \
+
+\f2 \cf3             jsondata[\cf8 "device_id"\cf3 ] = \cf8 "ffffffff-f7e9-aff6-ffff-ffff99d603a9"
+\f0 \cf0 \
+
+\f2 \cf3             jsondata[\cf8 "model_name"\cf3 ] = \cf8 "Android SDK built for x86"
+\f0 \cf0 \
+
+\f2 \cf3             jsondata[\cf8 "os_name"\cf3 ] = \cf8 "Android 9"
+\f0 \cf0 \
+
+\f2 \cf3             jsondata[\cf8 "sapp_ver"\cf3 ] = \cf8 "0.0.5"
+\f0 \cf0 \
+
+\f2 \cf3             jsondata[\cf8 "pub_id"\cf3 ] = \cf8 ""
+\f0 \cf0 \
+
+\f2 \cf3             jsondata[\cf8 "REQ_ID"\cf3 ] = \cf8 "LOGIN"
+\f0 \cf0 \
+
+\f2 \cf3             
+\f0 \cf0 \
+
+\f2 \cf3             
+\f4\i \cf6 //print(jsondata)
+\f0\i0 \cf0 \
+
+\f2 \cf3             
+\f0 \cf0 \
+
+\f2 \cf3             
+\f4\i \cf6 //let jsondataParsing = jsondata.dataUsingEncoding(NSUTF8StringEncoding)
+\f0\i0 \cf0 \
+\
+
+\f4\i \cf6 //            func json(from object:Any) -> String? \{
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //                guard let data = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]) else \{
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //                    return nil
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //                \}
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //                return String(data: data, encoding: String.Encoding.utf8)
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //            \}
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //            print("\\(json(from:jsondata as Any))")
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //            var data: Dictionary = [String:String]()
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //            data["data"] = json(from:jsondata as Any)
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //
+\f0\i0 \cf0 \
+
+\f2 \cf3             
+\f0 \cf0 \
+
+\f4\i \cf6 //            var data: Dictionary = [String:String]()
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //            let jsonEncoder = JSONEncoder()
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //            do \{
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //                let jsonData = try jsonEncoder.encode(jsondata)
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //                let jsonString = String(data: jsonData, encoding: .utf8)
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //                print("JSON String : " + jsonString!)
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //                data["data"] = jsonString
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //            \}
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //            catch \{
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //            \}
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //
+\f0\i0 \cf0 \
+
+\f2 \cf3             
+\f3\b \cf4 var
+\f2\b0 \cf3  data: \cf9 Dictionary\cf3  = [\cf9 String\cf3 :\cf9 AnyObject\cf3 ]()
+\f0 \cf0 \
+
+\f2 \cf3             data[\cf8 "data"\cf3 ] = jsondata 
+\f3\b \cf4 as
+\f2\b0 \cf3  \cf9 AnyObject
+\f0 \cf0 \
+
+\f2 \cf3             
+\f0 \cf0 \
+
+\f4\i \cf6 //            Alamofire.request(requestUrl, method: .post, parameters: data, encoding: JSONEncoding.default, headers: headers)
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //            .responseJSON \{ (response:DataResponse<Any>) in
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //                switch(response.result) \{
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //                case .success(_):
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //                    if let data = response.result.value\{
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //                        print(response.result.value.debugDescription)
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //                    \}
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //                    print(data.description)
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //                    break
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //                case .failure(_):
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //                    print(response.result.error)
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //                    break
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //                \}
+\f0\i0 \cf0 \
+
+\f4\i \cf6 //            \}
+\f1\i0 \cf0 \cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+	  }

@@ -1,0 +1,167 @@
+
+<!--
+ login.html
+ kopo_ios
+
+ Created by Dayyoung on 02/01/2019.
+ Copyright © 2019 Dayyoung. All rights reserved.
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartQDeploy</title>
+
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+
+    <script type="text/javascript">
+            //alert("test");
+function getAndroidVersion(ua) {
+    ua = (ua || navigator.userAgent).toLowerCase(); 
+    var match = ua.match(/android\s([0-9\.]*)/);
+    return match ? match[1] : undefined;
+};
+
+function iOSversion() {
+  if (/iP(hone|od|ad)/.test(navigator.platform)) {
+    // supports iOS 2.0 and later: <http://bit.ly/TJjs1V>
+    var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+    return parseInt(v[1], 10);
+    //return [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
+  }
+}
+
+
+// getAndroidVersion(); //"4.2.1"
+// parseInt(getAndroidVersion(), 10); //4
+// parseFloat(getAndroidVersion()); //4.2
+
+function goAndroid(){
+if(getAndroidVersion()){
+    var androidVersion = parseFloat(getAndroidVersion());
+
+        //alert(androidVersion);
+
+        if(androidVersion >= 4.4){
+            //window.location.href = ".app-release.apk"
+            window.open('./app-release.apk', '_blank'); 
+        }
+
+        else{
+            alert("키캣(4.4)이상 설치가 가능합니다.")
+        }
+    }    
+    else{
+        alert("안드로이드폰에서 설치가 가능합니다.")
+    }
+
+}
+
+function goiOS(){
+
+    var prefixUrl = "itms-services://?action=download-manifest&url="+"https://hycu-b61a9.web.app/install-test/manifest.plist"
+
+    //alert(navigator.userAgent)
+
+    if (/iPhone|iPad|iPod|Mac/i.test(navigator.userAgent)) {
+    // iOS 아이폰, 아이패드, 아이팟    
+
+    var ver = iOSversion();
+    //alert(ver);
+
+ //   var iOSVersion = parseInt(ver);
+
+//        if(iOSVersion >= 11){
+    window.location.href = prefixUrl
+//        }else{
+//            alert("iOS11 이상 설치가 가능합니다.")
+//        }
+    }else{
+        alert("아이폰에서 설치가 가능합니다.")
+    }
+    // window.open(prefixUrl , '_blank'); 
+}
+
+</script>
+</head>
+
+<style type="text/css">
+
+    .inputLabel {
+        //background-color: #4CAF50; /* Green */
+        //border: none;
+        //color: white;
+        //padding: 15px 32px;
+        //text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin : 5px;
+        width : 80%;
+    }
+
+    .button {
+        //background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin : 5px;
+        width : 80%;
+    }
+    .greenBack {background-color: #4CAF50;} /* Green */
+    .blueBack {background-color: #008CBA;} /* Blue */
+    .redBack {background-color: #f44336;} /* Red */
+        </style>
+
+<body>
+<center>
+    
+    <br>
+    <H3>HYCU 테스트앱 배포 (개발) </H3>
+    <br>
+
+<br>
+<H3>mobile.hycu.ac.kr : </H3><br>
+Android : <br>
+<a href="#" onclick="goAndroid()"><img src="./google-play-badge.png" alt="Download from Google play" width="169" height="53" class="img-responsive atto_image_button_text-bottom"></a> </div>
+<br>
+<a href="./app-release.apk"><font color="red">Android 설치 (6.0 이상 가능)</font></a>
+<br>
+<br>
+iOS : <br>
+<div class="app-store-icons">
+<a onclick="goiOS()" target="_blank"><img src="./app-store.svg" alt="Download from iOS App Store" width="169" height="50" class="img-responsive atto_image_button_text-bottom"></a>
+<br>
+<a href="https://support.apple.com/ko-kr/HT204460" target="_blank"><font color="red">iOS 설치 주의사항!!</font></a>
+<br>
+<br>
+<br>
+<br>
+
+
+<pre style="text-align: left;width: 300px">
+
+-패치노트 -
+
+ver 1.0.7 - 개발서버 테스트앱 배포.
+
+
+</pre>
+
+<br>
+<br>
+    <br>
+    <br>
+    COPYRIGHT 2020 BY Squarenet. ALL RIGHTS RESERVED.
+    <br>
+    <br>
+</center>
+
+
+
+</body>
+
+</html>

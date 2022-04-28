@@ -1,0 +1,93 @@
+
+<!--
+ login.html
+ kopo_ios
+
+ Created by Dayyoung on 02/01/2019.
+ Copyright © 2019 Dayyoung. All rights reserved.
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartQApp</title>
+
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<style type="text/css">
+
+    .inputLabel {
+        //background-color: #4CAF50; /* Green */
+        //border: none;
+        //color: white;
+        //padding: 15px 32px;
+        //text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin : 5px;
+        width : 80%;
+    }
+
+    .button {
+        //background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin : 5px;
+        width : 80%;
+    }
+    .greenBack {background-color: #4CAF50;} /* Green */
+    .blueBack {background-color: #008CBA;} /* Blue */
+    .redBack {background-color: #f44336;} /* Red */
+        </style>
+
+<body>
+
+<center>
+
+    <h3>https://hycu.page.link/app</h3>
+
+    <button class="button blueBack" onClick=goUrl("./session.html")>세션 테스트</a></button>
+
+    <button class="button blueBack" onClick=goUrl("./appinfo.html")>앱정보 테스트</a></button>
+
+    <button class="button blueBack" onClick=goUrl("./auth.html")>인증설정 테스트</a></button>
+
+    <button class="button blueBack" onClick=goUrl("./bio.html")>생체인증 테스트</a></button>
+
+    <button class="button greenBack" onClick=goUrl("./scheme.html")>Scheme 테스트</a></button>
+
+    <button class="button greenBack" onClick=goUrl("./media.html")>멀티미디어 테스트</a></button>
+
+    <button class="button greenBack" onClick=goUrl("./doc.html")>문서 테스트</a></button>
+
+    <button class="button greenBack" onClick=goUrl("./qr.html")>QR 테스트</a></button>
+
+    <button class="button greenBack" onClick=goUrl("./alert.html")>알람 테스트</a></button>
+
+    <button class="button greenBack" onClick=goUrl("https://hycu-b61a9.web.app/install")>앱설치 테스트</a></button>
+    <br>
+    <br>
+    COPYRIGHT 2020 BY Squarenet. ALL RIGHTS RESERVED.
+    <br>
+    <br>
+</center>
+</body>
+<script type="text/javascript">
+
+function goUrl(url){
+    //alert(button.innerHTML)
+    //var url = button.innerHTML.replace(/amp;/gi,"")
+    //alert(url)
+    window.location.href = url
+}
+
+</script>
+
+</html>
