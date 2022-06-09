@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>테스트</title>
+    <meta name="viewport"
+          content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+
+<body onload=onLoad()>
+
+<a href="./index.html"><h3>뒤로 가기</h3></a></br>
+<center>
+    <h3>생체인증 테스트</h3>
+
+    <br>
+    <div style="margin:5px;">
+    현재 사용자 : <p id=userId>N/A</p>
+    현재 비밀번호 : <p id=password>N/A</p>
+    현재 인증수단 : <p id=currentType>N/A</p>
+    </div>
+    <br>
+
+    <br>생체인증 등록 : <br>
+    <button class="button greenBack" onClick="goUrl(this)" id="registButton">smartq://hycu?action=registBiometric</button>
+    <br>
+    <br>생체인증 해지 : <br>
+    <button class="button redBack" onClick="goUrl(this)" id="deregistButton">smartq://hycu?action=deregistBiometric</button>
+    <br>
+    <br>생체인증 : <br>
+    <button class="button blueBack" onClick="goUrl(this)" id="authButton">smartq://hycu?action=goBiometric&returnUrl=https://hycu-b61a9.web.app/result.html</button>
+    <br>
+    <br>생체인증 확인: <br>
+    <button class="button blueBack" onClick="goUrl(this)" id="checkButton">smartq://hycu?action=checkBiometric</button>
+    <br>
+    <br>
+    COPYRIGHT 2020 BY Squarenet. ALL RIGHTS RESERVED.
+    <br>
+
+    <br>
+</center>
+
+<script type="text/javascript">
+
+//Override
+function smartQAppCallback(data){
+
+   var response = JSON.parse(data)
+
+    if(response.action == "getUserList"){
+
+        if(response.json.currentSmartQUser){
+
+            var userId = response.json.currentSmartQUser.userId
+            var password = response.json.currentSmartQUser.password
+
+            var userIdText = document.getElementById("userId")
+            userIdText.innerHTML = userId
+            var passwordText = document.getElementById("password")
+            passwordText.innerHTML = password
+
+            var registButton = document.getElementById("registButton")
+            if(registButton.innerHTML.indexOf(userId) == -1)
+                registButton.innerHTML = registButton.innerHTML +"&id="+ userId
+            var deregistButton = document.getElementById("deregistButton")
+            if(deregistButton.innerHTML.indexOf(userId) == -1)
+                deregistButton.innerHTML = deregistButton.innerHTML +"&id="+ userId
+            var authButton = document.getElementById("authButton")
+            if(authButton.innerHTML.indexOf(userId) == -1)
+                authButton.innerHTML = authButton.innerHTML +"&id="+ userId
+
+
+            var getAuthScheme = "smartq://hycu?action=getAuth&id=" + userId
+
+            try {
+                webkit.messageHandlers.callbackHandler.postMessage(getAuthScheme);
+            } catch(err) {
+            }
+
+            try {
+                window.Android.goScheme(getAuthScheme);
+            } catch(err) {
+            }
+
+        }else{
+            var userIdText = document.getElementById("N/A")
+            userIdText.innerHTML = userId
+            var passwordText = document.getElementById("N/A")
+            passwordText.innerHTML = password
+        }
+    }
+    else if(response.action == "getAuth"){
+
+        if(response.isSuccess == "Y"){
+            var currentType = document.getElementById("currentType")
+            currentType.innerHTML = response.type
+        }else{
+            var currentType = document.getElementById("currentType")
+            currentType.innerHTML = "N/A"
+
+            alert(response.errorCode +"\n"+ response.errorMessage)
+        }
+    }else{
+        alert(data)
+        onLoad()
+    }
+}
+
+function onLoad(){
+
+    //var getAuthScheme = "smartq://hycu?action=getAuth"
+    var getUserListScheme = "smartq://hycu?action=getUserList"
+
+    try {
+        //webkit.messageHandlers.callbackHandler.postMessage(getAuthScheme);
+        webkit.messageHandlers.callbackHandler.postMessage(getUserListScheme);
+    } catch(err) {
+    }
+
+    try {
+        window.Android.goScheme(getUserListScheme);
+        //window.Android.goScheme(getAuthScheme);
+    } catch(err) {
+    }
+
+}
+
+function goUrl(button){
+    //alert(button.innerHTML)
+    var url = button.innerHTML.replace(/amp;/gi,"")
+    //alert(url)
+    window.location.href = url
+}
+</script>
+
+</body>
+
+<style type="text/css">
+
+    .inputLabel {
+        //background-color: #4CAF50; /* Green */
+        //border: none;
+        //color: white;
+        //padding: 15px 32px;
+        //text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin : 5px;
+        width : 80%;
+    }
+
+    .button {
+        //background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin : 5px;
+        width : 80%;
+    }
+
+    .button a {
+        color: white;
+    }
+    .greenBack {background-color: #4CAF50;} /* Green */
+    .blueBack {background-color: #008CBA;} /* Blue */
+    .redBack {background-color: #f44336;} /* Red */
+
+
+</style>
+</html>
